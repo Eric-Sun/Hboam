@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+    
+  <!--destination:swing GUI-->    
+  <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+	    <layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="%d [%t] %-5p %c{1} - %m%n"/>
+            </layout>
+  </appender>
+
+    <appender name="LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="c:/cptserver.log" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+	    <layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="%d [%t] %-5p %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+
+    <logger name="core" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="sms" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="log" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+       <logger name="org" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+</log4j:configuration>

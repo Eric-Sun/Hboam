@@ -1,0 +1,23 @@
+0.0.1 
+目标：
+结果；完成架构，完成log处理的内容
+
+0.0.2 
+目标；
+1. 优化doExecute传入context 不用get获得
+2. 进一步解耦合，让开发者只需要继承一个executor接口
+3. 将数据库加载部分，从core模块中取出，让开发人员自己去控制DB的链接，(eg.perl,java etc)
+4. 去掉class-config配置，自定义配置通过properties节点实现
+
+0.0.3
+目标：
+1. 增加了pipeline的功能
+2. 开发了httpconnector和localconnector的代码
+3. 把db的代码放到core当中
+4. 让executor的class有默认实现，默认实现为依次调用pipeline中的valve
+
+
+0.0.4
+目标：
+1. 开发定式发送运维短信的程序
+2. 完成任务完成率脚本的迁移

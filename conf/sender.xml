@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sender name="all">
+	<sms>
+		<phonenum name="sunbo">15210334593</phonenum>
+	</sms>
+</sender>

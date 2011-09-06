@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hboam>
+	<db name="passport">
+		<url>jdbc:mysql://localhost:3306/mmorpgadm_passport</url>
+		<user>root</user>
+		<pwd>123456</pwd>
+	</db>
+</hboam>
