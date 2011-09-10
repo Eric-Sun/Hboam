@@ -14,7 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.hboam.am.connector.Connector;
-import com.hboam.am.connector.ConnectorAware;
+import com.hboam.am.connector.ConnectorSelector;
+import com.hboam.am.connector.ConnectorSelectorAware;
 import com.hboam.am.core.Component;
 import com.hboam.am.core.Constants;
 import com.hboam.am.core.Executor;
@@ -140,10 +141,16 @@ public class XMLResourceLoader implements Lifecycle {
 			Valve v = (Valve)ReflectionUtil.reflect(vClazz);
 			String connectorName = e.attributeValue("connector");
 			if( connectorName != null ){
-				String connectorClazz = Constants.connectorMapping.get(connectorName);
-				Connector c = (Connector)ReflectionUtil.reflect(connectorClazz);
-				if( v instanceof ConnectorAware )
-					((ConnectorAware)v).setConnector(c);
+				
+				String[] cArr = connectorName.split(",");
+				ConnectorSelector selector = new ConnectorSelector();
+				for( String s : cArr ){
+					String connectorClazz = Constants.connectorMapping.get(s);
+					Connector c = (Connector)ReflectionUtil.reflect(connectorClazz);
+					selector.add(s, c);
+				}
+				if( v instanceof ConnectorSelectorAware )
+					((ConnectorSelectorAware)v).setConnectorSelector(selector);
 			}
 			
 			p.addValve(v);

@@ -9,6 +9,7 @@ import com.hboam.am.core.Lifecycle;
 import com.hboam.am.util.HttpUtil;
 
 public class HTTPConnector implements Connector, Lifecycle {
+	HTTPConnectorParameters connectorParam;
 	Logger logger = LoggerFactory.getLogger("core");
 	@Override
 	public void init() {
@@ -24,7 +25,7 @@ public class HTTPConnector implements Connector, Lifecycle {
 		HttpUtil http = new HttpUtil();
 		
 		try {
-			return http.requestHttpContent(params.getUrl());
+			return http.requestHttpContent(connectorParam.getUrl());
 		} catch (IOException e) {
 			logger.error("e",e);
 			return null;
@@ -34,10 +35,10 @@ public class HTTPConnector implements Connector, Lifecycle {
 	@Override
 	public void validate(ConnectorParameters params)
 			throws ConnectorParametersException {
+		if ( !(  params instanceof HTTPConnectorParameters) )
+			throw new IllegalArgumentException(" Connector Parameters is error");
 		
-		if(params.getUrl()==null)
-			throw new ConnectorParametersException("url is needed");
-		
+		this.connectorParam = (HTTPConnectorParameters)params;
 	}
 
 }

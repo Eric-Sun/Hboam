@@ -6,9 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.hboam.am.connector.Connector;
-import com.hboam.am.connector.ConnectorAware;
+import com.hboam.am.connector.ConnectorParametersFactory;
+import com.hboam.am.connector.ConnectorSelector;
+import com.hboam.am.connector.ConnectorSelectorAware;
 import com.hboam.am.connector.ConnectorParameters;
 import com.hboam.am.connector.ConnectorRuntimeException;
+import com.hboam.am.connector.HTTPConnectorParameters;
+import com.hboam.am.connector.Protocol;
 import com.hboam.am.core.db.DBResource;
 import com.hboam.am.core.pipeline.Pipeline;
 import com.hboam.am.core.pipeline.Response;
@@ -16,14 +20,16 @@ import com.hboam.am.core.pipeline.Request;
 import com.hboam.am.core.pipeline.Valve;
 import com.hboam.am.sms.db.SMSDBHandler;
 
-public class FetchDataValve implements Valve,ConnectorAware {
+public class FetchDataValve implements Valve,ConnectorSelectorAware {
+
+	private ConnectorSelector selector ;
+	@Override
+	public void setConnectorSelector(ConnectorSelector selector) {
+		selector = selector;
+	}
 
 	Logger logger = LoggerFactory.getLogger("sms");
-	public void setConnector(Connector c) {
-		this.c = c;
-	}
 	private Pipeline p ;
-	private Connector c;
 	public void setPipeline(Pipeline p) {
 		this.p = p;
 		
@@ -58,8 +64,9 @@ public class FetchDataValve implements Valve,ConnectorAware {
         url.append("&message=").append(message);
         url.append("&addserial=");
         
-        ConnectorParameters p = new ConnectorParameters();
+        HTTPConnectorParameters p = (HTTPConnectorParameters) ConnectorParametersFactory.getConnectorParameters(Protocol.HTTP);
         p.setUrl(url.toString());
+        Connector c = selector.get(Protocol.HTTP);
         try {
 			c.call(p);
 		} catch (ConnectorRuntimeException e) {

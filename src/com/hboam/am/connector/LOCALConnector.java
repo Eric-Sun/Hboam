@@ -11,7 +11,7 @@ import com.hboam.am.core.LOGLevel;
 import com.hboam.am.core.Lifecycle;
 
 public class LOCALConnector implements Connector, Lifecycle {
-
+	LOCALConnectorParameters connectorParam = null;
 	Logger logger = LoggerFactory.getLogger(LOGLevel.CONNECTOR);
 
 	public void init() {
@@ -27,11 +27,11 @@ public class LOCALConnector implements Connector, Lifecycle {
 		
 		Runtime runtime = Runtime.getRuntime();
 //		String[] cmd = { "/bin/sh", "-c", params.getCmd()}; 
-		String[] cmd= {params.getCmd()};
+		String[] cmd= {connectorParam.getCmd()};
 		Process pro;
 		BufferedReader br;
 		try {
-			pro = runtime.exec(params.getCmd());
+			pro = runtime.exec(connectorParam.getCmd());
 			int exitVal = pro.exitValue();
 			br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
 			return br;
@@ -41,8 +41,10 @@ public class LOCALConnector implements Connector, Lifecycle {
 	}
 	
 	public void validate(ConnectorParameters params) throws ConnectorParametersException{
-		if(params.getCmd()==null)
-			throw new ConnectorParametersException("cmd is needed!");
+		if ( !(  params instanceof HTTPConnectorParameters) )
+			throw new IllegalArgumentException(" Connector Parameters is error");
+		
+		this.connectorParam = (LOCALConnectorParameters)params;
 		
 	}
 
