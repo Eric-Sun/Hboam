@@ -21,3 +21,6 @@
 目标：
 1. 修改connector 使用map类型的东西，可以获得多种不同的 connector
 2. 修改valve的获取方法，让他通过返回的字符串，调用不同的valve
+
+0.0.5 11-8
+1.增加了proxool的连接池支持

@@ -1,32 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <components>
-	<!-- <component name="logComponent" class="com.hboam.am.log.LogComponent">
-		<executor id="1" name="finishedTask" 
-			cron="0/40 * * * * ?" 
-			class="com.hboam.am.log.FinishedTaskExecutor"  description="1" >
-			<properties>
-				<property name="scriptType">SHELL</property>
-				<property name="scriptFilePath">/script/shell/task.sh</property>
-				<property name="matchString">1.log.</property>
-			</properties>
-			<pipeline>
-				<valve >com.hboam.am.log.valve.DummyValve</valve>
-				<valve connector="LOCAL">com.hboam.am.log.valve.PrintValve</valve>
-			</pipeline>
-		</executor>
-	</component> -->
-	
-	<component name="sms">
-		<executor id="1" name="sms-all" 
-				cron="0 0/2 * * * ?" 
-				description="send all" 
-				res="sms/res/">
+	<component name="statistics">
+	<!-- 在线数据分析 -->
+		<!-- <executor id="online" name="online" 
+				cron="0 0/10 * * * ?" 
+				description="" >
 				<pipeline>
-					<valve >com.hboam.am.sms.valve.InitValve</valve>
-					<valve connector="HTTP">com.hboam.am.sms.valve.FetchDataValve</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitGameValve</class>
+						<init-params name="PERIOD">DAY</init-params>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitChannelValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.OnlineValve</class>
+					</valve>
 				</pipeline>
-		</executor>
+		</executor>-->
+		<!-- 收入数据分析 -->
+		<!-- <executor id="revenue" name="revenue" 
+				cron="0 15 * * * ?" 
+				description="" >
+				<pipeline>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitGameValve</class>
+						<init-params name="PERIOD">DAY</init-params>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitChannelValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.RevenueValve</class>
+					</valve>
+				</pipeline>
+		</executor> 
+		 -->
+		<executor id="user" name="user" 
+				cron="0 0/2 * * * ?" 
+				description="" >
+				<pipeline>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitGameValve</class>
+						<init-params name="PERIOD">DAY</init-params>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitChannelValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.ConsumeCategoryValve</class>
+					</valve>
+					<!-- <valve>
+						<class>com.hboam.am.statistics.valve.ConsumeValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.UserValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.OnlineValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.RevenueValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.RoleValve</class>
+					</valve> -->
+				</pipeline>
+		</executor> 
 	</component>
 	
 </components>

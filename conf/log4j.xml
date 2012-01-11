@@ -9,9 +9,15 @@
 		<param name="ConversionPattern" value="%d [%t] %-5p %c{1} - %m%n"/>
             </layout>
   </appender>
-
+	<appender name="filelog_daily" class="org.apache.log4j.DailyRollingFileAppender">     
+        <param name="File" value="c:/daily.log" />     
+        <param name="DatePattern" value="'daily.'yyyy-MM-dd'.log'" />     
+        <layout class="org.apache.log4j.PatternLayout">     
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] (%c:%L) - %m%n" />     
+        </layout>     
+    </appender>  
     <appender name="LOG" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="c:/cptserver.log" />
+        <param name="File" value="c:/hboam.log" />
         <param name="DatePattern" value="'.'yyyy-MM-dd" />
 	    <layout class="org.apache.log4j.PatternLayout">
 		<param name="ConversionPattern" value="%d [%t] %-5p %c{1} - %m%n"/>
@@ -25,10 +31,7 @@
     <logger name="sms" additivity="true">
         <appender-ref ref="STDOUT" />
     </logger>
-    <logger name="log" additivity="true">
-        <appender-ref ref="STDOUT" />
-    </logger>
-       <logger name="org" additivity="true">
+    <logger name="statistics" additivity="true">
         <appender-ref ref="STDOUT" />
     </logger>
 </log4j:configuration>
