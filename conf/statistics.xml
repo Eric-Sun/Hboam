@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statistics>
+	<consume-category>
+		<categories>
+			<category name="时装消费" pattern="Cloth"/>
+			<category name="坐骑消费" pattern="egg"/>
+			<category name="经验卡消费" pattern="gold_exp"/>
+			<category name="技能书消费" pattern="skR"/>
+			<category name="强化消费" pattern="yinji,xingchensha"/>
+			<category name="宝石消费" pattern="stone,yueguangsha"/>
+			<category name="升级符消费" pattern="shengji"/>
+			<category name="传送消费" pattern="tel"/>
+			<category name="血瓶消费" pattern="potion"/>
+			<category name="器魂" pattern="qihun,xueshi,shenshi"/>
+			<category name="复活" pattern="rev"/>
+			<category name="坐骑经验" pattern="horse_exp"/>
+		</categories>
+	</consume-category>
+
+</statistics>

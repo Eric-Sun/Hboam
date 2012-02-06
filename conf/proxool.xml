@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<something-else-entirely>
+  
+ <proxool>
+		<alias>passport</alias>
+		<driver-url>
+			jdbc:mysql://221.130.14.34:3301/mmorpgadm_passport
+		</driver-url>
+
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="mmorpgadm" />
+			<property name="password" value="ourp@lm" />
+		</driver-properties>
+		<minimum-connection-count>20</minimum-connection-count>
+		<maximum-connection-count>50</maximum-connection-count>
+		<simultaneous-build-throttle>200</simultaneous-build-throttle>
+		<maximum-active-time>172800000000</maximum-active-time>
+		<maximum-connection-lifetime>180000000000</maximum-connection-lifetime>
+		<house-keeping-sleep-time>90000000</house-keeping-sleep-time>
+		<test-after-use>true</test-after-use>
+		<trace>true</trace>
+		<house-keeping-test-sql>
+			select CURRENT_DATE
+		</house-keeping-test-sql>
+	</proxool>
+	
+	 <proxool>
+		<alias>0</alias>
+		<driver-url>
+			jdbc:mysql://221.130.14.34:3306/mmorpg
+		</driver-url>
+
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="mmorpg" />
+			<property name="password" value="ourp@lm" />
+		</driver-properties>
+		<minimum-connection-count>2</minimum-connection-count>
+		<maximum-connection-count>5</maximum-connection-count>
+		<simultaneous-build-throttle>200</simultaneous-build-throttle>
+		<maximum-active-time>172800000000</maximum-active-time>
+		<maximum-connection-lifetime>180000000000</maximum-connection-lifetime>
+		<house-keeping-sleep-time>90000000</house-keeping-sleep-time>
+		<trace>true</trace>
+		<house-keeping-test-sql>
+			select CURRENT_DATE
+		</house-keeping-test-sql>
+	</proxool>
+	 <proxool>
+		<alias>1</alias>
+		<driver-url>
+			jdbc:mysql://221.130.14.34:3307/mmorpg
+		</driver-url>
+
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="mmorpg" />
+			<property name="password" value="ourp@lm" />
+		</driver-properties>
+		<minimum-connection-count>2</minimum-connection-count>
+		<maximum-connection-count>5</maximum-connection-count>
+		<simultaneous-build-throttle>200</simultaneous-build-throttle>
+		<maximum-active-time>172800000000</maximum-active-time>
+		<maximum-connection-lifetime>180000000000</maximum-connection-lifetime>
+		<house-keeping-sleep-time>90000000</house-keeping-sleep-time>
+		<trace>true</trace>
+		<house-keeping-test-sql>
+			select CURRENT_DATE
+		</house-keeping-test-sql>
+	</proxool>
+	 <proxool>
+		<alias>2</alias>
+		<driver-url>
+			jdbc:mysql://221.130.14.34:3304/mmorpg
+		</driver-url>
+
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="mmorpg" />
+			<property name="password" value="ourp@lm" />
+		</driver-properties>
+		<minimum-connection-count>2</minimum-connection-count>
+		<maximum-connection-count>5</maximum-connection-count>
+		<simultaneous-build-throttle>200</simultaneous-build-throttle>
+		<house-keeping-sleep-time>90000000</house-keeping-sleep-time>
+		<maximum-active-time>172800000000</maximum-active-time>
+		<maximum-connection-lifetime>180000000000</maximum-connection-lifetime>
+		<trace>true</trace>
+		<house-keeping-test-sql>
+			select CURRENT_DATE
+		</house-keeping-test-sql>
+	</proxool>
+	 <proxool>
+		<alias>50</alias>
+		<driver-url>
+			jdbc:mysql://221.130.14.34:3303/mmorpg
+		</driver-url>
+
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="mmorpg" />
+			<property name="password" value="ourp@lm" />
+		</driver-properties>
+		<minimum-connection-count>2</minimum-connection-count>
+		<maximum-connection-count>5</maximum-connection-count>
+		<house-keeping-sleep-time>90000000</house-keeping-sleep-time>
+		<simultaneous-build-throttle>200</simultaneous-build-throttle>
+		<maximum-active-time>172800000000</maximum-active-time>
+		<maximum-connection-lifetime>1800000000000</maximum-connection-lifetime>
+		<trace>true</trace>
+		<house-keeping-test-sql>
+			select CURRENT_DATE
+		</house-keeping-test-sql>
+	</proxool>
+	 <proxool>
+		<alias>3</alias>
+		<driver-url>
+			jdbc:mysql://221.130.14.34:3302/mmorpg
+		</driver-url>
+
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="mmorpg" />
+			<property name="password" value="ourp@lm" />
+		</driver-properties>
+		<minimum-connection-count>2</minimum-connection-count>
+		<maximum-connection-count>5</maximum-connection-count>
+		<simultaneous-build-throttle>200</simultaneous-build-throttle>
+		<house-keeping-sleep-time>90000000</house-keeping-sleep-time>
+		<maximum-active-time>172800000000</maximum-active-time>
+		<maximum-connection-lifetime>180000000000</maximum-connection-lifetime>
+		<trace>true</trace>
+		<house-keeping-test-sql>
+			select CURRENT_DATE
+		</house-keeping-test-sql>
+	</proxool>
+	 <proxool>
+		<alias>mid_statistics</alias>
+		<driver-url>
+			jdbc:mysql://221.130.14.34:4000/mid_statistics
+		</driver-url>
+
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="mmorpg" />
+			<property name="password" value="ourp@lm" />
+		</driver-properties>
+		<minimum-connection-count>2</minimum-connection-count>
+		<maximum-connection-count>5</maximum-connection-count>
+		<house-keeping-sleep-time>90000000</house-keeping-sleep-time>
+		<simultaneous-build-throttle>200</simultaneous-build-throttle>
+		<maximum-active-time>172800000000</maximum-active-time>
+		<maximum-connection-lifetime>180000000000</maximum-connection-lifetime>
+		<trace>true</trace>
+		<house-keeping-test-sql>
+			select CURRENT_DATE
+		</house-keeping-test-sql>
+	</proxool>
+</something-else-entirely>

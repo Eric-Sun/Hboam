@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project hboam with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/Documents and Settings/Administrator/桌面/h.jar">
+            <manifest>
+                <attribute name="Main-Class" value="com.hboam.am.startup.BootStrap"/>
+                <attribute name="Class-Path" value=". lib/dom4j-1.6.1.jar lib/log4j-1.2.13.jar 
+                	lib/quartz-2.0.1.jar lib/slf4j-api-1.4.3.jar lib/slf4j-log4j12-1.4.3.jar 
+                	lib/jaxen-1.1-beta-6.jar lib/mysql-connector-java-5.0.8-bin.jar 
+                	lib/commons-httpclient-3.0.1.jar lib/commons-io-1.2.jar 
+                	lib/commons-logging.jar lib/commons-codec-1.2.jar"/>
+            </manifest>
+            <fileset dir="E:/Myprj/hboam/bin"/>
+        </jar>
+        <delete dir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <mkdir dir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/dom4j-1.6.1.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/log4j-1.2.13.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/quartz-2.0.1.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/slf4j-api-1.4.3.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/slf4j-log4j12-1.4.3.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/jaxen-1.1-beta-6.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/mysql-connector-java-5.0.8-bin.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/commons-httpclient-3.0.1.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/commons-io-1.2.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/commons-logging.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+        <copy file="E:/Myprj/hboam/lib/commons-codec-1.2.jar" todir="C:/Documents and Settings/Administrator/桌面/h_lib"/>
+    </target>
+</project>

@@ -1,0 +1,30 @@
+2011-10-18 17:19:56,375 [main] INFO  core - Start scheduler SuccessFully!
+2011-10-18 17:19:56,531 [main] INFO  core - Start Connection Factory SuccessFully!
+2011-10-18 17:19:56,578 [main] INFO  core - Resource Load SuccessFully!
+2011-10-18 17:21:55,765 [main] INFO  core - Start scheduler SuccessFully!
+2011-10-18 17:21:55,906 [main] INFO  core - Start Connection Factory SuccessFully!
+2011-10-18 17:21:55,968 [main] INFO  core - Resource Load SuccessFully!
+2011-10-18 17:23:48,656 [main] INFO  core - Start scheduler SuccessFully!
+2011-10-18 17:23:48,796 [main] INFO  core - Start Connection Factory SuccessFully!
+2011-10-18 17:23:48,843 [main] INFO  core - Resource Load SuccessFully!
+2011-10-18 17:30:06,750 [DefaultQuartzScheduler_Worker-1] INFO  statistics - duplicated data.game=cjsh subgame=3beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 17:30:06,875 [DefaultQuartzScheduler_Worker-1] INFO  statistics - duplicated data.game=cjsh subgame=2beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 17:30:07,000 [DefaultQuartzScheduler_Worker-1] INFO  statistics - duplicated data.game=cjsh subgame=50beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 17:40:00,328 [DefaultQuartzScheduler_Worker-2] INFO  statistics - duplicated data.game=cjsh subgame=3beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 17:40:00,453 [DefaultQuartzScheduler_Worker-2] INFO  statistics - duplicated data.game=cjsh subgame=2beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 17:40:00,562 [DefaultQuartzScheduler_Worker-2] INFO  statistics - duplicated data.game=cjsh subgame=50beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 17:50:00,390 [DefaultQuartzScheduler_Worker-3] INFO  statistics - duplicated data.game=cjsh subgame=3beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 17:50:00,515 [DefaultQuartzScheduler_Worker-3] INFO  statistics - duplicated data.game=cjsh subgame=2beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 17:50:00,656 [DefaultQuartzScheduler_Worker-3] INFO  statistics - duplicated data.game=cjsh subgame=50beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 18:00:00,234 [DefaultQuartzScheduler_Worker-4] INFO  statistics - duplicated data.game=cjsh subgame=3beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 18:00:00,296 [DefaultQuartzScheduler_Worker-4] INFO  statistics - duplicated data.game=cjsh subgame=2beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 18:00:00,375 [DefaultQuartzScheduler_Worker-4] INFO  statistics - duplicated data.game=cjsh subgame=50beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 18:10:00,140 [DefaultQuartzScheduler_Worker-5] INFO  statistics - duplicated data.game=cjsh subgame=3beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 18:10:00,171 [DefaultQuartzScheduler_Worker-5] INFO  statistics - duplicated data.game=cjsh subgame=2beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 18:10:00,218 [DefaultQuartzScheduler_Worker-5] INFO  statistics - duplicated data.game=cjsh subgame=50beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 19:59:41,734 [main] INFO  core - Start scheduler SuccessFully!
+2011-10-18 19:59:42,125 [main] INFO  core - Start Connection Factory SuccessFully!
+2011-10-18 19:59:42,593 [main] INFO  core - Resource Load SuccessFully!
+2011-10-18 20:00:05,828 [DefaultQuartzScheduler_Worker-1] INFO  statistics - duplicated data.game=cjsh subgame=3beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 20:00:05,968 [DefaultQuartzScheduler_Worker-1] INFO  statistics - duplicated data.game=cjsh subgame=2beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
+2011-10-18 20:00:06,109 [DefaultQuartzScheduler_Worker-1] INFO  statistics - duplicated data.game=cjsh subgame=50beginDate=Mon Oct 17 00:00:00 CST 2011 endDate=Mon Oct 17 23:59:59 CST 2011 key=ONLINE
