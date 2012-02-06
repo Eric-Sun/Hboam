@@ -11,7 +11,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.hboam.am.core.LOGLevel;
-
+/**
+ * 控制JDBC访问的类，每次查询都会关闭链接，放入对应的链接池内
+ * @author Eric
+ *
+ */
 public class JDBCTemplate {
 	
 	Logger logger = LoggerFactory.getLogger(LOGLevel.CORE);

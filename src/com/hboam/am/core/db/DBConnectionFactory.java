@@ -21,6 +21,12 @@ import com.hboam.am.core.LOGLevel;
 import com.hboam.am.core.Lifecycle;
 import com.hboam.am.util.XmlUtil;
 
+/**
+ * 数据库链接的工厂类，用来获得对应的数据库链接
+ * <p> 默认使用proxool连接池
+ * @author Eric
+ *
+ */
 public class DBConnectionFactory implements Lifecycle{
 	
 	private String HBOAM_RESOUCE_PATH="conf/hboam.xml";
@@ -34,7 +40,9 @@ public class DBConnectionFactory implements Lifecycle{
 		if( ! inited )
 			loadProxool();
 	}
-
+	/**
+	 * 导入配置参数
+	 */
 	private void loadProxool(){
 		if ( ! inited ){
 			try {

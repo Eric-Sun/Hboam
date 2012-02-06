@@ -1,5 +1,11 @@
 package com.hboam.am.core.db;
 
+/**
+ * 用于存储数据库访问基本信息的对象<p>
+ * 通过配置文件配置的
+ * @author Eric
+ *
+ */
 public class DBResourceKey {
 	public DBResourceKey(String name, String url, String pwd, String user) {
 		super();
