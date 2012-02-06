@@ -2,4 +2,28 @@
 第一个版本
 
 0.0.2 
+<<<<<<< HEAD
 关闭了需要关闭的pareparedstatement和 resultset
+=======
+目标；
+1. 优化doExecute传入context 不用get获得
+2. 进一步解耦合，让开发者只需要继承一个executor接口
+3. 将数据库加载部分，从core模块中取出，让开发人员自己去控制DB的链接，(eg.perl,java etc)
+4. 去掉class-config配置，自定义配置通过properties节点实现
+
+0.0.3
+目标：
+1. 增加了pipeline的功能
+2. 开发了httpconnector和localconnector的代码
+3. 把db的代码放到core当中
+4. 让executor的class有默认实现，默认实现为依次调用pipeline中的valve
+
+
+0.0.4
+目标：
+1. 修改connector 使用map类型的东西，可以获得多种不同的 connector
+2. 修改valve的获取方法，让他通过返回的字符串，调用不同的valve
+
+0.0.5 11-8
+1.增加了proxool的连接池支持
+>>>>>>> 16c35aa679e23ae7f304929c34fbc588f2b4566d

@@ -136,9 +136,29 @@ public class XMLResourceLoader implements Lifecycle {
 				String name = paramsE.attributeValue("name");
 				String value = paramsE.getTextTrim();
 				paramsMap.put(name, value);
+<<<<<<< HEAD
 			}
 			
 			Valve v = (Valve)ReflectionUtil.reflect(vClazz);
+=======
+			}
+			
+			Valve v = (Valve)ReflectionUtil.reflect(vClazz);
+			String connectorName = e.attributeValue("connector");
+			if( connectorName != null ){
+				
+				String[] cArr = connectorName.split(",");
+				ConnectorSelector selector = new ConnectorSelector();
+				for( String s : cArr ){
+					String connectorClazz = Constants.connectorMapping.get(s);
+					Connector c = (Connector)ReflectionUtil.reflect(connectorClazz);
+					selector.add(s, c);
+				}
+				if( v instanceof ConnectorSelectorAware )
+					((ConnectorSelectorAware)v).setConnectorSelector(selector);
+			}
+			
+>>>>>>> 16c35aa679e23ae7f304929c34fbc588f2b4566d
 			p.addValve(v,paramsMap);
 		}
 		return p;

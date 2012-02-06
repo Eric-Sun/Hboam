@@ -2,14 +2,21 @@
 
 <components>
 	<component name="statistics">
+<<<<<<< HEAD
 		 <executor id="revenue" name="revenue" 
 				cron="0 30 * * * ?" 
+=======
+	<!-- 在线数据分析 -->
+		<!-- <executor id="online" name="online" 
+				cron="0 0/10 * * * ?" 
+>>>>>>> 16c35aa679e23ae7f304929c34fbc588f2b4566d
 				description="" >
 				<pipeline>
 					<valve>
 						<class>com.hboam.am.statistics.valve.InitGameValve</class>
 						<init-params name="PERIOD">DAY</init-params>
 					</valve>
+<<<<<<< HEAD
 				</pipeline>
 		</executor> 
 		 
@@ -23,6 +30,65 @@
 				</pipeline>
 		</executor>  
 		
+=======
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitChannelValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.OnlineValve</class>
+					</valve>
+				</pipeline>
+		</executor>-->
+		<!-- 收入数据分析 -->
+		<!-- <executor id="revenue" name="revenue" 
+				cron="0 15 * * * ?" 
+				description="" >
+				<pipeline>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitGameValve</class>
+						<init-params name="PERIOD">DAY</init-params>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitChannelValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.RevenueValve</class>
+					</valve>
+				</pipeline>
+		</executor> 
+		 -->
+		<executor id="user" name="user" 
+				cron="0 0/2 * * * ?" 
+				description="" >
+				<pipeline>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitGameValve</class>
+						<init-params name="PERIOD">DAY</init-params>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitChannelValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.ConsumeCategoryValve</class>
+					</valve>
+					<!-- <valve>
+						<class>com.hboam.am.statistics.valve.ConsumeValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.UserValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.OnlineValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.RevenueValve</class>
+					</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.RoleValve</class>
+					</valve> -->
+				</pipeline>
+		</executor> 
+>>>>>>> 16c35aa679e23ae7f304929c34fbc588f2b4566d
 	</component>
 	
 </components>

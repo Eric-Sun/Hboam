@@ -28,7 +28,11 @@
     <logger name="core" additivity="true">
         <appender-ref ref="STDOUT" />
     </logger>
+<<<<<<< HEAD
     <logger name="monitor" additivity="true">
+=======
+    <logger name="sms" additivity="true">
+>>>>>>> 16c35aa679e23ae7f304929c34fbc588f2b4566d
         <appender-ref ref="STDOUT" />
     </logger>
     <logger name="statistics" additivity="true">

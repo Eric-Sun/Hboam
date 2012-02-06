@@ -26,11 +26,15 @@ public class DBConnectionFactory implements Lifecycle{
 	private String HBOAM_RESOUCE_PATH="conf/hboam.xml";
 	private static String PROXOOL_RESOUCE_PATH="conf/proxool.xml";
 	private static  Logger logger = LoggerFactory.getLogger(LOGLevel.CORE);
+<<<<<<< HEAD
 	private boolean inited = false;
+=======
+>>>>>>> 16c35aa679e23ae7f304929c34fbc588f2b4566d
 	
 	public void init() {
 		// TODO Auto-generated method stub
 		// load all db resource 
+<<<<<<< HEAD
 		if( ! inited )
 			loadProxool();
 	}
@@ -43,6 +47,16 @@ public class DBConnectionFactory implements Lifecycle{
 			} catch (ProxoolException e) {
 				logger.error(" load proxool error ",e);
 			}
+=======
+		loadProxool();
+	}
+
+	private void loadProxool(){
+		try {
+			JAXPConfigurator.configure(PROXOOL_RESOUCE_PATH, false);
+		} catch (ProxoolException e) {
+			logger.error(" load proxool error ",e);
+>>>>>>> 16c35aa679e23ae7f304929c34fbc588f2b4566d
 		}
 	}
 	
