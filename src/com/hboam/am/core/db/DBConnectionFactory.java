@@ -3,68 +3,68 @@ package com.hboam.am.core.db;
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.logicalcobwebs.proxool.ProxoolException;
+import org.logicalcobwebs.proxool.configuration.JAXPConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.hboam.am.core.LOGLevel;
 import com.hboam.am.core.Lifecycle;
 import com.hboam.am.util.XmlUtil;
 
 public class DBConnectionFactory implements Lifecycle{
 	
 	private String HBOAM_RESOUCE_PATH="conf/hboam.xml";
-	private static  Logger logger = LoggerFactory.getLogger("core");
-	private static Map<String, DBResourceKey> dbMap = null;
+	private static String PROXOOL_RESOUCE_PATH="conf/proxool.xml";
+	private static  Logger logger = LoggerFactory.getLogger(LOGLevel.CORE);
+	private boolean inited = false;
 	
 	public void init() {
 		// TODO Auto-generated method stub
 		// load all db resource 
-		dbMap = new HashMap<String, DBResourceKey>();
-		
-		loadBHoam();
+		if( ! inited )
+			loadProxool();
 	}
 
-	private void loadBHoam(){
-		try {
-			XmlUtil xml = new XmlUtil(HBOAM_RESOUCE_PATH);
-			List<Element> dbList = xml.getElements("/hboam/db");
-			for( Element e : dbList ){
-				String dbName = e.attributeValue("name");
-				String url = e.elementText("url");
-				String user = e.elementText("user");
-				String pwd = e.elementText("pwd");
-				DBResourceKey dbKey = new DBResourceKey(dbName, url, pwd, user);
-				dbMap.put(dbName, dbKey);
+	private void loadProxool(){
+		if ( ! inited ){
+			try {
+				JAXPConfigurator.configure(PROXOOL_RESOUCE_PATH, false);
+				inited = true;
+			} catch (ProxoolException e) {
+				logger.error(" load proxool error ",e);
 			}
-		} catch (Exception e) {
-			logger.error("error",e);
 		}
 	}
 	
 	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
 		
 	}
 	/**
 	 * return An connection specified the dbResource ( log )
 	 * if any.
-	 * <p> If exception happened, return null
+	 * <p> If exception threw, return null
 	 * @param dbResource
 	 * @return
 	 */
 	public static Connection getConnection(String dbResource){
-		DBResourceKey key = dbMap.get(dbResource);
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("org.logicalcobwebs.proxool.ProxoolDriver");
 			
-			return DriverManager.getConnection(key.getUrl(),key.getUser(),key.getPwd());
+			Connection conn = DriverManager.getConnection("proxool."+dbResource); 
+			
+			return conn;
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -72,10 +72,6 @@ public class DBConnectionFactory implements Lifecycle{
 			return null;
 		}
 		
-		
-		
 	}
-	
-	
 	
 }

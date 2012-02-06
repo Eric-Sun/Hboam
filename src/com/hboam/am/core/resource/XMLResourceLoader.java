@@ -131,12 +131,15 @@ public class XMLResourceLoader implements Lifecycle {
 		Pipeline p = PipelineFactory.getPipeline();
 		
 		List<Element> vList = pE.elements("valve");
-		
+		Map<String, String> paramsMap = new HashMap<String, String>();
 		for( Element e : vList ){
-			String vClazz = e.getText();
-			
-			
-			
+			String vClazz = e.elementText("class");
+			List<Element> paramsEList = e.elements("init-params");
+			for( Element paramsE : paramsEList ){
+				String name = paramsE.attributeValue("name");
+				String value = paramsE.getTextTrim();
+				paramsMap.put(name, value);
+			}
 			
 			Valve v = (Valve)ReflectionUtil.reflect(vClazz);
 			String connectorName = e.attributeValue("connector");
@@ -153,7 +156,7 @@ public class XMLResourceLoader implements Lifecycle {
 					((ConnectorSelectorAware)v).setConnectorSelector(selector);
 			}
 			
-			p.addValve(v);
+			p.addValve(v,paramsMap);
 		}
 		return p;
 	}

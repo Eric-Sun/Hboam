@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hboam>
 	<db name="passport">
-		<url>jdbc:mysql://localhost:3306/mmorpgadm_passport</url>
-		<user>root</user>
-		<pwd>123456</pwd>
+		<url>jdbc:mysql://221.130.14.34:3301/mmorpgadm_passport</url>
+		<user>mmorpgadm</user>
+		<pwd>ourp@lm</pwd>
+	</db>
+	<db name="0">
+		<url>jdbc:mysql://221.130.14.34:3306/mmorpg</url>
+		<user>mmorpg</user>
+		<pwd>ourp@lm</pwd>
+	</db>
+	<db name="1">
+		<url>jdbc:mysql://221.130.14.34:3307/mmorpg</url>
+		<user>mmorpg</user>
+		<pwd>ourp@lm</pwd>
+	</db>
+	<db name="2">
+		<url>jdbc:mysql://221.130.14.34:3304/mmorpg</url>
+		<user>mmorpg</user>
+		<pwd>ourp@lm</pwd>
+	</db>
+	<db name="50">
+		<url>jdbc:mysql://221.130.14.34:3303/mmorpg</url>
+		<user>mmorpg</user>
+		<pwd>ourp@lm</pwd>
+	</db>
+	<db name="3">
+		<url>jdbc:mysql://221.130.14.34:3302/mmorpg</url>
+		<user>mmorpg</user>
+		<pwd>ourp@lm</pwd>
+	</db>
+	<db name="mid_statistics">
+		<url>jdbc:mysql://221.130.14.34:4000/mid_statistics</url>
+		<user>mmorpg</user>
+		<pwd>ourp@lm</pwd>
 	</db>
 </hboam>

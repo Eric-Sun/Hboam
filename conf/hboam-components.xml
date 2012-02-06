@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <components>
-	<!-- <component name="logComponent" class="com.hboam.am.log.LogComponent">
-		<executor id="1" name="finishedTask" 
-			cron="0/40 * * * * ?" 
-			class="com.hboam.am.log.FinishedTaskExecutor"  description="1" >
-			<properties>
-				<property name="scriptType">SHELL</property>
-				<property name="scriptFilePath">/script/shell/task.sh</property>
-				<property name="matchString">1.log.</property>
-			</properties>
-			<pipeline>
-				<valve >com.hboam.am.log.valve.DummyValve</valve>
-				<valve connector="LOCAL">com.hboam.am.log.valve.PrintValve</valve>
-			</pipeline>
-		</executor>
-	</component> -->
-	
-	<component name="sms">
-		<executor id="1" name="sms-all" 
-				cron="0 0/2 * * * ?" 
-				description="send all" 
-				res="sms/res/">
+	<component name="statistics">
+		 <executor id="revenue" name="revenue" 
+				cron="0 30 * * * ?" 
+				description="" >
 				<pipeline>
-					<valve >com.hboam.am.sms.valve.InitValve</valve>
-					<valve connector="HTTP">com.hboam.am.sms.valve.FetchDataValve</valve>
+					<valve>
+						<class>com.hboam.am.statistics.valve.InitGameValve</class>
+						<init-params name="PERIOD">DAY</init-params>
+					</valve>
 				</pipeline>
-		</executor>
+		</executor> 
+		 
+		<executor id="monitor" name="monitor" 
+				cron="0 25 * * * ?" 
+				description="" >
+				<pipeline>
+					<valve>
+						<class>com.hboam.am.monitor.valve.ChargeMonitorValve</class>
+					</valve>
+				</pipeline>
+		</executor>  
+		
 	</component>
 	
 </components>

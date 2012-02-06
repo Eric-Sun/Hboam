@@ -74,7 +74,7 @@ public class StandardScheduler implements Scheduler {
 		
 		// TODO Auto-generated method stub
 		JobDetail job = newJob(ExecutorCaller.class).withIdentity(
-				componentName, executorName)
+				executorName,componentName )
 				.build();
 
 		// Trigger the job to run now, and then repeat every 40 seconds

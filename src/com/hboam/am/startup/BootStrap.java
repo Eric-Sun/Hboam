@@ -40,9 +40,25 @@ public class BootStrap {
 		XMLResourceLoader resourceLoader = new XMLResourceLoader();
 		resourceLoader.init();
 		
+		addHook();
+		
  		logger.info("Resource Load SuccessFully!");
+ 		
+ 		
+ 		
 		
 	}
+	
+	/**
+	 * add shutdown hook
+	 */
+	private static void addHook(){
+		
+		Runtime.getRuntime().addShutdownHook(new ShutdownHook());
+	}
+	
+	
+	
 	
 	public static void main(String[] args){
 		
@@ -52,4 +68,25 @@ public class BootStrap {
 		
 	}
 	
+	
+	
+
 }
+
+/**
+ * shutdown hook For close all the alive connections
+ * @author Eric
+ *
+ */
+class ShutdownHook extends Thread{
+	
+	public void run() {
+		
+		DBConnectionFactory fac = new DBConnectionFactory();
+		
+		fac.destroy();
+		
+	}
+	
+}
+

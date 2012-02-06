@@ -2,6 +2,7 @@ package com.hboam.am.core.pipeline;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import com.hboam.am.core.ExecutorContext;
 import com.hboam.am.core.Lifecycle;
@@ -25,7 +26,7 @@ public class StandardPipeline implements Pipeline, Lifecycle {
 	public void setExecutorContext(ExecutorContext ctxt) {
 		this.ctxt = ctxt;
 	}
-	public void addValve(Valve v) {
+	public void addValve(Valve v,Map<String, String> paramsMap) {
 		v.setPipeline(this);
 		
 		if( vList.size()!=0 )
@@ -33,6 +34,8 @@ public class StandardPipeline implements Pipeline, Lifecycle {
 		vList.add(v);
 		if( v instanceof Lifecycle )
 			((Lifecycle)v).init();
+		
+		v.setParams(paramsMap);
 	}
 
 	public void handle() {
